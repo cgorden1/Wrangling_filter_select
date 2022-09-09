@@ -236,8 +236,16 @@ This chart shows us that the movies that are in here are Harry Potter and the so
 4. What is the highest budget for a movie that is an Animation or Comedy with at least 100 votes?
 
 ```{r}
-
+ movies_2000 <- movies %>% 
+filter(votes >= 100) %>% 
+filter(Animation ==1 | Comedy == 1) %>% 
+arrange(desc(budget))
+print (movies_2000$budget)    
 ```
+
+In this chart we can see the highest budget was $170000000.
+
+The highest budget for a comedy or animation movie 
 
 5. Is your favorite movie in the dataset? What other questions could you ask or answer using `filter()`, `select()`, and `arrange()`?
 
